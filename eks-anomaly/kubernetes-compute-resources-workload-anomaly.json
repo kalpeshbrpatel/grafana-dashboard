@@ -196,7 +196,7 @@
               "uid": "${datasource}"
             },
             "editorMode": "code",
-            "expr": "max(\n    avg_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload.*\"}[1h:1m])\n    + $stddev * \n    stddev_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload.*\"}[1h:1m])\n)\n",
+            "expr": "max(\n    avg_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload-.*\"}[1h:1m])\n    + $stddev * \n    stddev_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload-.*\"}[1h:1m])\n)\n",
             "hide": false,
             "interval": "",
             "legendFormat": "1H Anomaly Threshold",
@@ -209,7 +209,7 @@
               "uid": "prometheus"
             },
             "editorMode": "code",
-            "expr": "max(\n    avg_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload.*\"}[1d:5m])\n    + $stddev * \n    stddev_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload.*\"}[1d:5m])\n    )\n",
+            "expr": "max(\n    avg_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload-.*\"}[1d:5m])\n    + $stddev * \n    stddev_over_time(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate5m{cluster=\"$cluster\", namespace=\"$namespace\", pod=~\"^$workload-.*\"}[1d:5m])\n    )\n",
             "hide": false,
             "legendFormat": "1D Anomaly Threshold",
             "range": true,
@@ -382,7 +382,7 @@
               "uid": "${datasource}"
             },
             "editorMode": "code",
-            "expr": "avg(avg_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload.*\"}[1h:1m])\n    + 2 * \n    stddev_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload.*\"}[1h:1m]))\n",
+            "expr": "avg(avg_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload-.*\"}[1h:1m])\n    + 2 * \n    stddev_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload-.*\"}[1h:1m]))\n",
             "hide": false,
             "legendFormat": "1H Anomaly Threshold",
             "range": true,
@@ -394,7 +394,7 @@
               "uid": "prometheus"
             },
             "editorMode": "code",
-            "expr": "avg(avg_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload.*\"}[1d:5m])\n    + 2 * \n    stddev_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload.*\"}[1d:5m]))",
+            "expr": "avg(avg_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload-.*\"}[1d:5m])\n    + 2 * \n    stddev_over_time(container_memory_working_set_bytes{cluster=\"$cluster\", namespace=\"$namespace\", container!=\"\", image!=\"\", pod=~\"^$workload-.*\"}[1d:5m]))",
             "hide": false,
             "legendFormat": "1D Anomaly Threshold",
             "range": true,
