@@ -729,7 +729,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "10s",
+  "refresh": "1m",
   "schemaVersion": 40,
   "tags": [
     "kubernetes-mixin"
