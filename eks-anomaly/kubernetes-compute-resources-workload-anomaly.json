@@ -1940,7 +1940,7 @@
     }
   ],
   "preload": false,
-  "refresh": "10s",
+  "refresh": "1m",
   "schemaVersion": 41,
   "tags": [],
   "templating": {
